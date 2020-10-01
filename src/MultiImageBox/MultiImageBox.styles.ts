@@ -10,21 +10,16 @@ export const useStyles = makeStyles((theme) => ({
       maxWidth: 250,
     },
   },
+  image: {
+    objectFit: 'cover',
+  },
   thumbnail: {
     flexWrap: 'nowrap',
     overflowX: 'auto',
     overflowY: 'hidden',
     scrollbarWidth: 'none',
-    opacity: 1,
   },
-  thumbnailSelected: {
-    opacity: 0.5,
-  },
-  image: {
-    position: 'relative',
-    objectFit: 'cover',
-  },
-  imageAuxiliary: {
+  thumbnailImage: {
     height: 80,
     width: 80,
     borderRadius: 20,
@@ -33,13 +28,39 @@ export const useStyles = makeStyles((theme) => ({
       width: 70,
     },
   },
-  imgButton: {
+  thumbnailSelected: {
+    opacity: 0.6,
+  },
+  imgButtonBase: {
     borderRadius: 20,
   },
   imageMain: {
     height: 300,
     width: 300,
     borderRadius: 20,
+    [theme.breakpoints.down('sm')]: {
+      height: 250,
+      width: 250,
+    },
+  },
+  modalBackdrop: {
+    minHeight: '100vh',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modalButton: {
+    height: 40,
+    width: 40,
+  },
+  modalImage: {
+    margin: '0 5px',
+    height: 500,
+    width: 500,
+    borderRadius: 20,
+    '&:focus': {
+      outline: 'none',
+    },
     [theme.breakpoints.down('sm')]: {
       height: 250,
       width: 250,
