@@ -7,7 +7,7 @@ export const useStyles = makeStyles((theme) => ({
     maxWidth: 300,
     width: '100%',
     [theme.breakpoints.down('sm')]: {
-      maxWidth: 250,
+      maxWidth: 200,
     },
   },
   image: {
@@ -24,8 +24,8 @@ export const useStyles = makeStyles((theme) => ({
     width: 80,
     borderRadius: 20,
     [theme.breakpoints.down('sm')]: {
-      height: 70,
-      width: 70,
+      height: 50,
+      width: 50,
     },
   },
   thumbnailSelected: {
@@ -39,8 +39,8 @@ export const useStyles = makeStyles((theme) => ({
     width: 300,
     borderRadius: 20,
     [theme.breakpoints.down('sm')]: {
-      height: 250,
-      width: 250,
+      height: 200,
+      width: 200,
     },
   },
   modalBackdrop: {
