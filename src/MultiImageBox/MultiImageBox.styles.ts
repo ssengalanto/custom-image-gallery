@@ -62,8 +62,8 @@ export const useStyles = makeStyles((theme) => ({
       outline: 'none',
     },
     [theme.breakpoints.down('sm')]: {
-      height: 250,
-      width: 250,
+      height: 230,
+      width: 230,
     },
   },
 }));
