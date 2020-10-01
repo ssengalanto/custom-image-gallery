@@ -17,6 +17,9 @@ export const useStyles = makeStyles((theme) => ({
     flexWrap: 'nowrap',
     overflowX: 'auto',
     overflowY: 'hidden',
+    '&::-webkit-scrollbar': {
+      display: 'none',
+    },
     scrollbarWidth: 'none',
   },
   thumbnailImage: {
