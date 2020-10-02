@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import { useState, useCallback } from 'react';
 
 export type UseToggleType = ReturnType<typeof useToggle>;
