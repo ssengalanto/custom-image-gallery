@@ -1,11 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-interface Props {
+export interface ImageProps {
   dimensions?: number | [number, number];
+  imageFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
 }
 
-export const useStyles = makeStyles(() => ({
-  image: ({ dimensions }: Props) => {
+export const useImageStyles = makeStyles(() => ({
+  image: ({ dimensions, imageFit = 'cover' }: ImageProps) => {
     let height: number | undefined;
     let width: number | undefined;
 
@@ -19,6 +20,6 @@ export const useStyles = makeStyles(() => ({
       width = x;
       height = y;
     }
-    return { objectFit: 'cover', height, width };
+    return { objectFit: imageFit, height, width };
   },
 }));

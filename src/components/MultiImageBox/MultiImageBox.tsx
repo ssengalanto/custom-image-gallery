@@ -14,7 +14,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { useToggle } from 'hooks';
 
 import { Image } from '../ImageResizer';
-import { useStyles } from './MultiImageBox.styles';
+import { useMultiImageBoxStyles } from './MultiImageBox.styles';
 import { useMultiImageBox } from './useMultiImageBox';
 
 interface MultiImageBoxProps {
@@ -34,7 +34,7 @@ export const MultiImageBox: React.FC<MultiImageBoxProps> = ({ loading, images, i
     operations: { handleOpen, handleClose },
   } = useToggle();
 
-  const classes = useStyles();
+  const classes = useMultiImageBoxStyles();
 
   return (
     <>

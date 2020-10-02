@@ -1,8 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-export type MutliImageBoxUseStyles = ReturnType<typeof useStyles>;
-
-export const useStyles = makeStyles((theme) => ({
+export const useMultiImageBoxStyles = makeStyles((theme) => ({
   container: {
     maxWidth: 300,
     width: '100%',
