@@ -67,7 +67,7 @@ export const MultiImageBox: React.FC<MultiImageBoxProps> = ({ loading, images, i
                   <Image
                     loading="lazy"
                     alt={src ? `${imageType}-auxiliary-image-${index}` : undefined}
-                    className={clsx(classes.image, classes.thumbnailImage, {
+                    className={clsx(classes.thumbnailImage, {
                       [classes.thumbnailSelected]: index === selectedImage,
                     })}
                     src={src}
@@ -101,7 +101,7 @@ export const MultiImageBox: React.FC<MultiImageBoxProps> = ({ loading, images, i
               alt={
                 images[selectedImage] ? `${imageType}-auxiliary-image-${selectedImage}` : undefined
               }
-              className={clsx(classes.image, classes.modalImage)}
+              className={classes.modalImage}
               src={images[selectedImage]}
             />
             <IconButton classes={{ root: classes.modalButton }} onClick={handleNext}>
