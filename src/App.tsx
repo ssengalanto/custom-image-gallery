@@ -4,7 +4,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { MultiImageBox } from './MultiImageBox';
+import { MultiImageBox } from './components';
 
 import wine1 from './assets/images/wine-1.jpg';
 import wine2 from './assets/images/wine-2.jpg';

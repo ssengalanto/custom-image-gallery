@@ -13,6 +13,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 import { useToggle } from 'hooks';
 
+import { Image } from '../ImageResizer';
 import { useStyles } from './MultiImageBox.styles';
 import { useMultiImageBox } from './useMultiImageBox';
 
@@ -43,10 +44,10 @@ export const MultiImageBox: React.FC<MultiImageBoxProps> = ({ loading, images, i
             <Skeleton variant="rect" classes={{ root: classes.imageMain }} />
           ) : (
             <ButtonBase classes={{ root: classes.imgButtonBase }} onClick={handleOpen}>
-              <img
+              <Image
                 loading="lazy"
                 alt={`${imageType}-main-image`}
-                className={clsx(classes.image, classes.imageMain)}
+                className={classes.imageMain}
                 src={images[selectedImage]}
               />
             </ButtonBase>
@@ -63,7 +64,7 @@ export const MultiImageBox: React.FC<MultiImageBoxProps> = ({ loading, images, i
                   classes={{ root: classes.imgButtonBase }}
                   onClick={() => handleImageSelection(index)}
                 >
-                  <img
+                  <Image
                     loading="lazy"
                     alt={src ? `${imageType}-auxiliary-image-${index}` : undefined}
                     className={clsx(classes.image, classes.thumbnailImage, {
@@ -95,7 +96,7 @@ export const MultiImageBox: React.FC<MultiImageBoxProps> = ({ loading, images, i
             <IconButton classes={{ root: classes.modalButton }} onClick={handlePrevious}>
               <ArrowLeftIcon />
             </IconButton>
-            <img
+            <Image
               loading="lazy"
               alt={
                 images[selectedImage] ? `${imageType}-auxiliary-image-${selectedImage}` : undefined
