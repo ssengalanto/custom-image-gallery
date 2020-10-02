@@ -3,12 +3,10 @@ import { useCallback, useState } from 'react';
 
 type Params = { images: string[] };
 
-export type UseMultiImageBox = ReturnType<typeof useMultiImageBox>;
-
-export const useMultiImageBox = ({ images }: Params) => {
+export const useMultiImageBox = ({ images = [] }: Params) => {
   const [selectedImage, setSelectedImage] = useState(0);
 
-  const handleIncrement = useCallback(() => {
+  const handleDecrement = useCallback(() => {
     if (selectedImage === 0) {
       setSelectedImage(images.length - 1);
       return;
@@ -17,7 +15,7 @@ export const useMultiImageBox = ({ images }: Params) => {
     setSelectedImage((current) => current - 1);
   }, [selectedImage, images]);
 
-  const handleDecrement = useCallback(() => {
+  const handleIncrement = useCallback(() => {
     if (selectedImage === images.length - 1) {
       setSelectedImage(0);
       return;
@@ -29,31 +27,31 @@ export const useMultiImageBox = ({ images }: Params) => {
   const handlePrevious: React.MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
       e.stopPropagation();
-      handleIncrement();
+      handleDecrement();
     },
-    [handleIncrement],
+    [handleDecrement],
   );
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
       if (e.key === 'ArrowRight') {
-        handleIncrement();
+        handleDecrement();
         return;
       }
 
       if (e.key === 'ArrowLeft') {
-        handleDecrement();
+        handleIncrement();
       }
     },
-    [handleDecrement, handleIncrement],
+    [handleIncrement, handleDecrement],
   );
 
   const handleNext: React.MouseEventHandler<HTMLButtonElement> = useCallback(
     (e) => {
       e.stopPropagation();
-      handleDecrement();
+      handleIncrement();
     },
-    [handleDecrement],
+    [handleIncrement],
   );
 
   const handleImageSelection = useCallback((index: number) => {
