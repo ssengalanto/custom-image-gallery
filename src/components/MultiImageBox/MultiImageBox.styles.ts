@@ -8,9 +8,6 @@ export const useMultiImageBoxStyles = makeStyles((theme) => ({
       maxWidth: 200,
     },
   },
-  image: {
-    objectFit: 'cover',
-  },
   thumbnail: {
     flexWrap: 'nowrap',
     overflowX: 'auto',
